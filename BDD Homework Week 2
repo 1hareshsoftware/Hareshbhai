@@ -1,0 +1,54 @@
+Feature: User see categories on homepage
+Scenario: user see homepage with categories: Books,Computers,Electronics,Apparel & Shoes,Digital downloads,Jewelary and Gift Card
+	Given user is on homepage
+	When open browser
+	And user type URL www.xyzonline.com
+	Then User see homepage with categories Books,Computers,Electronics,Apparel & Shoes,Digital downloads,Jewelary, Gift Card successfully
+	
+Feature: Books category 
+Scenario: user see books category successfully
+	Given user is on homepage
+	When open browser
+	And user type URL www.xyzonline.com
+	And user click books category
+	Then user see books category successfully
+	
+Background:
+	Given User is on Books category page
+Scenario Outline: User see books category with different filters
+	when user select filter Sort by <Sort by>
+	And user select filter Display per page <Display> 
+	And user select filter View as <View as>
+	Then user should see books category with filters successfully
+Example:
+	| Sort by           | Display | View as|
+	| Name: A to Z      | 4       | Grid   |
+	| Name: A to Z      | 4       | List   |
+	| Name: A to Z      | 8       | Grid   |
+	| Name: A to Z      | 8       | List   |
+	| Name: A to Z      | 12      | Grid   |
+	| Name: A to Z      | 12      | List   |
+	| Name: Z to A      | 4       | Grid   |
+	| Name: Z to A      | 4       | List   |
+	| Name: Z to A      | 8       | Grid   |
+	| Name: Z to A      | 8       | List   |
+	| Name: Z to A      | 12      | Grid   |
+	| Name: Z to A      | 12      | List   |
+	| Price: Low to High| 4       | Grid   |
+	| Price: Low to High| 4       | List   |
+	| Price: Low to High| 8       | Grid   |
+	| Price: Low to High| 8       | List   |
+	| Price: Low to High| 12      | Grid   |
+	| Price: Low to High| 12      | List   |
+	| Price: High to Low| 4       | Grid   |
+	| Price: High to Low| 4       | List   |
+	| Price: High to Low| 8       | Grid   |
+	| Price: High to Low| 8       | List   |
+	| Price: High to Low| 12      | Grid   |
+	| Price: High to Low| 12      | List   |
+	| Price: Created on | 4       | Grid   |
+	| Price: Created on | 4       | List   |
+	| Price: Created on | 8       | Grid   |
+	| Price: Created on | 8       | List   |
+	| Price: Created on | 12      | Grid   |
+	| Price: Created on | 12      | List   |

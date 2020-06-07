@@ -1,0 +1,17 @@
+Feature: User BMAIL Login
+Scenario: User login with valid credentials successfully
+Given user is on Bmail login page
+When user enter valid ID with hdkatariya
+And user enter valid password with yds369
+Then user login successfully
+
+Scenario Outline: User should not be able to login with invalid credentials
+Given user is on Bmail login page
+When user should enter invalid Username <Username>
+And user should enter invalid password <Password>
+Example
+| Username  |  Password   |
+| hdkataria |  yds369     |
+| hdkatariya|  yds        |
+|           | yds369      |
+| hdkatariya|             |  
